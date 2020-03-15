@@ -1,5 +1,3 @@
-//App.js
-
 import React from "react";
 import CustomerList from "./CustomerList";
 import customerArray from "../data.json";
@@ -21,6 +19,8 @@ export default class App extends React.Component {
     document.addEventListener("click", e => {
       var targetElement = e.target;
 
+      //Loop through DOM. If it reaches null, we reached
+      //the top and the click was outside
       do {
         if (
           targetElement.className != null &&
@@ -31,9 +31,13 @@ export default class App extends React.Component {
         targetElement = targetElement.parentNode;
       } while (targetElement);
 
-      var elements = document.getElementsByClassName("card");
-      for (var i = 0; i < elements.length; i++) {
-        elements[i].style.background = "white";
+      //Since click is outside, set active card to white
+      var currentActiveState = this.state.active;
+      if (currentActiveState != null) {
+        var activeCard = document.getElementById(currentActiveState);
+        if (activeCard != null) {
+          activeCard.style.backgroundColor = "white";
+        }
       }
     });
   }
@@ -77,5 +81,3 @@ export default class App extends React.Component {
     );
   }
 }
-
-
