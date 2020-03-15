@@ -1,0 +1,27 @@
+#filterText {
+  display: inline;
+  margin-left: auto;
+  margin-right: auto;
+}
+#cardDiv {
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* .toggleColor {
+  background-color: lightskyblue;
+}
+.toggleWhite {
+  background-color: white;
+} */
+.card {
+  width: 100%;
+  cursor: pointer;
+}
+.customerTitle {
+  font-weight: bold;
+}
+.catchPhrase {
+  font-style: italic;
+}
